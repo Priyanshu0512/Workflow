@@ -1,8 +1,8 @@
 import { DATABASE_ID, MEMBERS_ID, WORKSPACES_ID } from "@/config";
 import { getMember } from "../members/utils";
-import { Workspace } from "./types";
 import { createSessionClient } from "@/lib/appwrite";
 import { Query } from "node-appwrite";
+import { Workspace } from "../projects/types";
 
 export const getWorkspaces = async () => {
   try {
@@ -35,31 +35,26 @@ interface GetWorkspaceProps {
 }
 
 export const getWorkspace = async ({ workspaceId }: GetWorkspaceProps) => {
-  try {
-    const { account, databases } = await createSessionClient();
-    const user = await account.get();
+  const { account, databases } = await createSessionClient();
+  const user = await account.get();
 
-    const member = await getMember({
-      databases,
-      userId: user.$id,
-      workspaceId,
-    });
+  const member = await getMember({
+    databases,
+    userId: user.$id,
+    workspaceId,
+  });
 
-    if (!member) {
-      return null;
-    }
-
-    const workspace = await databases.getDocument<Workspace>(
-      DATABASE_ID,
-      WORKSPACES_ID,
-      workspaceId
-    );
-
-    return workspace;
-  } catch (error) {
-    console.log("Appwrite Error", error);
-    return null;
+  if (!member) {
+    throw new Error("Unauthorized");
   }
+
+  const workspace = await databases.getDocument<Workspace>(
+    DATABASE_ID,
+    WORKSPACES_ID,
+    workspaceId
+  );
+
+  return workspace;
 };
 
 interface GetWorkspaceInfoProps {
@@ -69,20 +64,15 @@ interface GetWorkspaceInfoProps {
 export const getWorkspaceInfo = async ({
   workspaceId,
 }: GetWorkspaceInfoProps) => {
-  try {
-    const { databases } = await createSessionClient();
+  const { databases } = await createSessionClient();
 
-    const workspace = await databases.getDocument<Workspace>(
-      DATABASE_ID,
-      WORKSPACES_ID,
-      workspaceId
-    );
+  const workspace = await databases.getDocument<Workspace>(
+    DATABASE_ID,
+    WORKSPACES_ID,
+    workspaceId
+  );
 
-    return {
-      name: workspace.name,
-    };
-  } catch (error) {
-    console.log("Appwrite Error", error);
-    return null;
-  }
+  return {
+    name: workspace.name,
+  };
 };
