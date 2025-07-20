@@ -13,7 +13,7 @@ import { MemberRole } from "../../members/types";
 import { generateInviteCode } from "@/lib/utils";
 import { getMember } from "../../members/utils";
 import z from "zod";
-import { Workspace } from "../../projects/types";
+import { Workspace } from "../types";
 
 const app = new Hono()
   .get("/", sessionMiddleware, async (c) => {

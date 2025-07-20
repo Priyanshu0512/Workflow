@@ -16,7 +16,6 @@ const ProjectIdPage = async ({ params }: ProjectIdPageProps) => {
   const initialValues = await getProject({
     projectId: params.projectId,
   });
-  console.log("hi" + initialValues);
 
   if (!initialValues) {
     throw new Error("Project not found");

@@ -26,6 +26,7 @@ import { useConfirm } from "@/hooks/use-confirm";
 
 import { Project } from "../types";
 import { useUpdateProject } from "../api/use-update-project";
+import { useDeleteProject } from "../api/use-delete-project";
 
 interface EditProjectFormProps {
   onCancel?: () => void;
@@ -39,8 +40,8 @@ export const EditProjectForm = ({
   const router = useRouter();
   const { mutate, isPending } = useUpdateProject();
 
-  // const { mutate: deleteWorkspace, isPending: isDeletigWorkspace } =
-  //   useDeleteWorkspace();
+  const { mutate: deleteProject, isPending: isDeletingProject } =
+    useDeleteProject();
 
   const [DeleteDialog, confirmDelete] = useConfirm(
     "Delete Project",
@@ -88,16 +89,16 @@ export const EditProjectForm = ({
 
     if (!ok) return;
 
-    // deleteWorkspace(
-    //   {
-    //     param: { workspaceId: initialValues.$id },
-    //   },
-    //   {
-    //     onSuccess: () => {
-    //       window.location.href = "/";
-    //     },
-    //   }
-    // );
+    deleteProject(
+      {
+        param: { projectId: initialValues.$id },
+      },
+      {
+        onSuccess: () => {
+          window.location.href = `/workspaces/${initialValues.workspaceId}`;
+        },
+      }
+    );
   };
 
   return (
@@ -111,10 +112,11 @@ export const EditProjectForm = ({
             onClick={
               onCancel
                 ? onCancel
-                : () =>
+                : () => {
                     router.push(
                       `/workspaces/${initialValues.workspaceId}/projects/${initialValues.$id}`
-                    )
+                    );
+                  }
             }
           >
             <ArrowLeftIcon className="size-4 mr-2" />
@@ -255,7 +257,7 @@ export const EditProjectForm = ({
               size={"sm"}
               variant={"destructive"}
               type={"button"}
-              disabled={isPending}
+              disabled={isPending || isDeletingProject}
               onClick={handleDelete}
             >
               Delete Project
