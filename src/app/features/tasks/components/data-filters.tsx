@@ -9,7 +9,6 @@ import {
 import { useGetMembers } from "../../members/api/use-get-members";
 import { useGetProjects } from "../../projects/api/use-get-projects";
 import { useWorkspaceId } from "../../workspaces/hooks/use-workspace-id";
-import { getWorkspace } from "../../workspaces/queries";
 import { FolderIcon, ListChecksIcon, UserIcon } from "lucide-react";
 import { TaskStatus } from "../types";
 import { useTaskFilters } from "../hooks/use-task-filters";
