@@ -19,7 +19,6 @@ export const EditTaskFormWrapper = ({
   const { data: initialValues, isLoading: isLoadingTask } = useGetTask({
     taskId: id,
   });
-  console.log(id);
 
   // const { data } = useGetProjects({ workspaceId });
 

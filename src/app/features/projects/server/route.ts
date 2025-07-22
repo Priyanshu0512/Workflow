@@ -37,7 +37,6 @@ const app = new Hono()
         Query.equal("workspaceId", workspaceId),
         Query.orderDesc("$createdAt"),
       ]);
-      console.log(projects);
 
       return c.json({ data: projects });
     }
