@@ -2,11 +2,11 @@ import { useQuery } from "@tanstack/react-query";
 
 import { client } from "@/lib/rpc";
 
-interface UseGetProjectsProps {
+interface UseGetProjectProps {
   projectId: string;
 }
 
-export const useGetProject = ({ projectId }: UseGetProjectsProps) => {
+export const useGetProject = ({ projectId }: UseGetProjectProps) => {
   const query = useQuery({
     queryKey: ["project", projectId],
     queryFn: async () => {
