@@ -2,6 +2,7 @@
 
 import { useGetTask } from "@/app/features/tasks/api/use-get-task";
 import { TaskBreadcrumbs } from "@/app/features/tasks/components/task-bread-crumbs";
+import { TaskDescription } from "@/app/features/tasks/components/task-description";
 import { TaskOverview } from "@/app/features/tasks/components/task-overview";
 import { useTaskId } from "@/app/features/tasks/hooks/use-task-id";
 import { DottedSeparator } from "@/components/dotted-separator";
@@ -24,6 +25,7 @@ export const TaskIdClient = () => {
       <DottedSeparator className="my-6" />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <TaskOverview task={data} />
+        <TaskDescription task={data} />
       </div>
     </div>
   );
