@@ -1,5 +1,5 @@
 "use client";
-import { useWorkspaceId } from "@/app/features/workspaces/hooks/use-workspace-id";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { cn } from "@/lib/utils";
 import { SettingsIcon, UserIcon } from "lucide-react";
 import Link from "next/link";

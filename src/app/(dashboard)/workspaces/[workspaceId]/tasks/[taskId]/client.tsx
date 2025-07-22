@@ -1,10 +1,10 @@
 "use client";
 
-import { useGetTask } from "@/app/features/tasks/api/use-get-task";
-import { TaskBreadcrumbs } from "@/app/features/tasks/components/task-bread-crumbs";
-import { TaskDescription } from "@/app/features/tasks/components/task-description";
-import { TaskOverview } from "@/app/features/tasks/components/task-overview";
-import { useTaskId } from "@/app/features/tasks/hooks/use-task-id";
+import { useGetTask } from "@/features/tasks/api/use-get-task";
+import { TaskBreadcrumbs } from "@/features/tasks/components/task-bread-crumbs";
+import { TaskDescription } from "@/features/tasks/components/task-description";
+import { TaskOverview } from "@/features/tasks/components/task-overview";
+import { useTaskId } from "@/features/tasks/hooks/use-task-id";
 import { DottedSeparator } from "@/components/dotted-separator";
 import { PageError } from "@/components/page-error";
 import { PageLoader } from "@/components/page-loader";

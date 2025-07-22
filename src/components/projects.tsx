@@ -1,9 +1,9 @@
 "use client";
 
-import { useGetProjects } from "@/app/features/projects/api/use-get-projects";
-import { ProjectAvatar } from "@/app/features/projects/components/project-avatar";
-import { useCreateProjectModal } from "@/app/features/projects/hooks/use-create-project-modal";
-import { useWorkspaceId } from "@/app/features/workspaces/hooks/use-workspace-id";
+import { useGetProjects } from "@/features/projects/api/use-get-projects";
+import { ProjectAvatar } from "@/features/projects/components/project-avatar";
+import { useCreateProjectModal } from "@/features/projects/hooks/use-create-project-modal";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

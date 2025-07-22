@@ -1,6 +1,6 @@
-import { getCurrent } from "@/app/features/auth/api/queries";
+import { getCurrent } from "@/features/auth/api/queries";
 
-import { TaskViewSwitcher } from "@/app/features/tasks/components/task-view-switcher";
+import { TaskViewSwitcher } from "@/features/tasks/components/task-view-switcher";
 import { redirect } from "next/navigation";
 
 const TaskPage = async () => {

@@ -1,5 +1,5 @@
-import { getCurrent } from "@/app/features/auth/api/queries";
-import { CreateWorkspaceForm } from "@/app/features/workspaces/components/create-workspace-form";
+import { getCurrent } from "@/features/auth/api/queries";
+import { CreateWorkspaceForm } from "@/features/workspaces/components/create-workspace-form";
 import { redirect } from "next/navigation";
 
 const WorkspaceCreatePage = async () => {

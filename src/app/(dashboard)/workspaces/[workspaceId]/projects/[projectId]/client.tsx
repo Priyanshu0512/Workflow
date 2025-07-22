@@ -1,10 +1,10 @@
 "use client";
 
-import { useGetProject } from "@/app/features/projects/api/use-get-project";
-import { useGetProjectAnalytics } from "@/app/features/projects/api/use-get-project-analytics";
-import { ProjectAvatar } from "@/app/features/projects/components/project-avatar";
-import { useProjectId } from "@/app/features/projects/hooks/use-project-Id";
-import { TaskViewSwitcher } from "@/app/features/tasks/components/task-view-switcher";
+import { useGetProject } from "@/features/projects/api/use-get-project";
+import { useGetProjectAnalytics } from "@/features/projects/api/use-get-project-analytics";
+import { ProjectAvatar } from "@/features/projects/components/project-avatar";
+import { useProjectId } from "@/features/projects/hooks/use-project-Id";
+import { TaskViewSwitcher } from "@/features/tasks/components/task-view-switcher";
 import { Analytics } from "@/components/analytics";
 import { PageError } from "@/components/page-error";
 import { PageLoader } from "@/components/page-loader";

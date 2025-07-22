@@ -1,5 +1,5 @@
 "use client";
-import { UserButton } from "@/app/features/auth/components/useButton";
+import { UserButton } from "@/features/auth/components/useButton";
 import { MobileSidebar } from "./mobile-sidebar";
 import { usePathname } from "next/navigation";
 

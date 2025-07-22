@@ -44,10 +44,9 @@ export const EditTaskForm = ({
 }: EditTaskFormProps) => {
   const { mutate, isPending } = useUpdateTask();
 
-  const schema = createTaskSchema.omit({
-    workspaceId: true,
-    description: true,
-  });
+  const schema = createTaskSchema
+    .omit({ workspaceId: true, description: true })
+    .extend({ dueDate: z.date() });
 
   type EditTaskFormValues = z.infer<typeof schema>;
 

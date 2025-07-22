@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useWorkspaceId } from "@/app/features/workspaces/hooks/use-workspace-id";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { useCreateTask } from "../api/use-create-task";
 import { createTaskSchema } from "../schemas";
 import { DatePicker } from "@/components/data-picker";
@@ -46,10 +46,18 @@ export const CreateTaskForm = ({
 
   const schema = createTaskSchema.omit({ workspaceId: true });
 
-  const form = useForm<z.infer<typeof schema>>({
-    resolver: zodResolver(schema),
+  type FormValues = z.infer<typeof schema>;
+
+  const form = useForm<FormValues>({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    resolver: zodResolver(schema) as any,
     defaultValues: {
       name: "",
+      dueDate: new Date(),
+      assigneeId: "",
+      projectId: "",
+      status: TaskStatus.TODO,
+      description: "",
     },
   });
 

@@ -39,7 +39,7 @@ export const TaskOverview = ({ task }: TaskOverviewProps) => {
           </OverviewProperty>
 
           <OverviewProperty label="Status">
-            <Badge variant={task.status}>
+            <Badge variant="secondary">
               {snakeCaseToTitleCase(task.status)}
             </Badge>
           </OverviewProperty>

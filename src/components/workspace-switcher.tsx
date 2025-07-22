@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetWorkspaces } from "@/app/features/workspaces/api/use-get-workspaces";
+import { useGetWorkspaces } from "@/features/workspaces/api/use-get-workspaces";
 import { RiAddCircleFill } from "react-icons/ri";
 import {
   Select,
@@ -9,10 +9,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { WorkspaceAvatar } from "@/app/features/workspaces/components/workspace-avatar";
+import { WorkspaceAvatar } from "@/features/workspaces/components/workspace-avatar";
 import { useRouter } from "next/navigation";
-import { useWorkspaceId } from "@/app/features/workspaces/hooks/use-workspace-id";
-import { useCreateWorkspaceModal } from "@/app/features/workspaces/hooks/use-create-workspace-modal";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
+import { useCreateWorkspaceModal } from "@/features/workspaces/hooks/use-create-workspace-modal";
 
 export const WorkspaceSwitcher = () => {
   const { data: workspaces } = useGetWorkspaces();

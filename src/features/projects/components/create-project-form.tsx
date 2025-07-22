@@ -20,7 +20,7 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-import { useWorkspaceId } from "@/app/features/workspaces/hooks/use-workspace-id";
+import { useWorkspaceId } from "@/features/workspaces/hooks/use-workspace-id";
 import { useCreateProject } from "../api/use-create-project";
 import { createProjectsSchema } from "../schemas";
 import { useRouter } from "next/navigation";
