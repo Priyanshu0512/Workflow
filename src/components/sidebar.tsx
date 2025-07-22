@@ -10,10 +10,10 @@ export const Sidebar = () => {
     <aside className="h-full bg-neutral-100 p-4 w-full">
       <Link href="/">
         <div className="flex items-center space-x-2 justify-center">
-          <Image src="/logo.svg" alt="logo" width={56} height={48} />
-          <div className="text-3xl font-semibold text-blue-700 uppercase">
+          <Image src="/logo.png" alt="logo" width={300} height={300} />
+          {/* <div className="text-3xl font-semibold text-blue-700 uppercase">
             Workflow
-          </div>
+          </div> */}
         </div>
       </Link>
       <DottedSeparator className="my-4" />
