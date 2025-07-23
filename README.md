@@ -21,7 +21,11 @@
 
 ## 🎉 Demo Showcase
 
-_(Upload and insert your demo screenshots or GIFs here)_
+<img width="3360" height="2100" alt="Screenshot 2025-07-23 at 5 13 58 AM" src="https://github.com/user-attachments/assets/14408637-cdc8-4e23-99e6-aa2751218497" />
+
+---
+
+<img width="3360" height="2100" alt="Screenshot 2025-07-23 at 5 14 37 AM" src="https://github.com/user-attachments/assets/2247fe4c-373e-4d95-818b-a9b5d9e49d48" />
 
 ---
 
@@ -119,7 +123,7 @@ workflow/
 ### Quick Installation
 
 ```bash
-git clone https://github.com/yourusername/workflow.git
+git clone https://github.com/Priyanshu0512/workflow.git
 cd workflow
 
 # Install dependencies
@@ -133,7 +137,6 @@ npm run dev
 bun dev
 ```
 
-Visit [http://localhost:3000](http://localhost:3000)
 
 ---
 
