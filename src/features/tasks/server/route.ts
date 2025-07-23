@@ -20,7 +20,9 @@ const app = new Hono()
         workspaceId: z.string(),
         projectId: z.string().nullish(),
         assigneeId: z.string().nullish(),
-        status: z.enum(TaskStatus).nullish(),
+        status: z
+          .enum(Object.values(TaskStatus) as [string, ...string[]])
+          .nullish(),
         search: z.string().nullish(),
         dueDate: z.string().nullish(),
       })
@@ -305,7 +307,7 @@ const app = new Hono()
         tasks: z.array(
           z.object({
             $id: z.string(),
-            status: z.enum(TaskStatus),
+            status: z.enum(Object.values(TaskStatus) as [string, ...string[]]),
             position: z.number().int().positive().min(1000).max(1_000_000),
           })
         ),
