@@ -31,6 +31,7 @@ A modern, full-stack project management platform built with Next.js 14, featurin
 ## 🛠️ Tech Stack
 
 ### Frontend
+
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS + shadcn/ui
@@ -41,6 +42,7 @@ A modern, full-stack project management platform built with Next.js 14, featurin
 - **Icons**: Lucide React
 
 ### Backend
+
 - **API**: Hono.js
 - **Database**: Appwrite
 - **Authentication**: Appwrite Auth
@@ -48,6 +50,7 @@ A modern, full-stack project management platform built with Next.js 14, featurin
 - **Validation**: Zod
 
 ### Development Tools
+
 - **Package Manager**: npm/bun
 - **Linting**: ESLint
 - **Type Checking**: TypeScript
@@ -140,15 +143,17 @@ NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=images-bucket-id
 ### 4. Appwrite Setup
 
 1. **Create an Appwrite Project**
+
    - Go to [Appwrite Console](https://cloud.appwrite.io/)
    - Create a new project
    - Copy the Project ID
 
 2. **Create Database Collections**
-   
+
    Create the following collections with these attributes:
 
    **Workspaces Collection:**
+
    ```
    - name (string, required)
    - imageUrl (string, optional)
@@ -157,6 +162,7 @@ NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=images-bucket-id
    ```
 
    **Members Collection:**
+
    ```
    - workspaceId (string, required)
    - userId (string, required)
@@ -164,6 +170,7 @@ NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=images-bucket-id
    ```
 
    **Projects Collection:**
+
    ```
    - name (string, required)
    - imageUrl (string, optional)
@@ -171,6 +178,7 @@ NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=images-bucket-id
    ```
 
    **Tasks Collection:**
+
    ```
    - name (string, required)
    - status (string, required) // BACKLOG, TODO, IN_PROGRESS, IN_REVIEW, DONE
@@ -183,6 +191,7 @@ NEXT_PUBLIC_APPWRITE_IMAGES_BUCKET_ID=images-bucket-id
    ```
 
 3. **Create Storage Bucket**
+
    - Create a bucket for image uploads
    - Set appropriate permissions
 
@@ -216,7 +225,7 @@ Set up the following permissions for each collection:
 ### Authentication Settings
 
 1. **Email/Password**: Enabled by default
-2. **OAuth Providers**: 
+2. **OAuth Providers**:
    - Google: Configure OAuth credentials
    - GitHub: Configure OAuth app
 
@@ -225,12 +234,14 @@ Set up the following permissions for each collection:
 ### Deploy to Vercel (Recommended)
 
 1. **Connect to Vercel**
+
    ```bash
    npm i -g vercel
    vercel
    ```
 
 2. **Set Environment Variables**
+
    - Add all environment variables in Vercel dashboard
    - Update `NEXT_PUBLIC_APP_URL` to your production URL
 
